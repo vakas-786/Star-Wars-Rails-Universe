@@ -26,6 +26,8 @@ PEOPLE7_URL = 'https://swapi.dev/api/people/?page=7'
 PEOPLE8_URL = 'https://swapi.dev/api/people/?page=8'
 PEOPLE9_URL = 'https://swapi.dev/api/people/?page=9'
 
+FILM_URL = 'https://swapi.dev/api/films/'
+
 
 def get_planet(planet_url)
    
@@ -33,7 +35,7 @@ def get_planet(planet_url)
     response = Net::HTTP.get_response(uri)
     ruby_hash = JSON.parse(response.body)
     ruby_hash["results"].each do |planet| 
-       Planet.create(name: planet["name"], diameter: planet["diameter"], terrain: planet["terrain"], population: planet["population"] ) 
+       Planet.create(name: planet["name"], diameter: planet["diameter"], terrain: planet["terrain"], population: planet["population"], url_planet: planet["url"] ) 
     end
 end 
 get_planet(PLANET_URL) 
@@ -50,9 +52,10 @@ def get_person(person_url)
     response = Net::HTTP.get_response(uri)
     ruby_hash = JSON.parse(response.body)
     ruby_hash["results"].each do |person| 
-       Person.create(name: person["name"], dob: person["birth_year"], gender: person["gender"], skin_color: person["skin_color"] ) 
+       Person.create(name: person["name"], dob: person["birth_year"], gender: person["gender"], skin_color: person["skin_color"], url_people: person["url"] ) 
     end
 end 
+#we used a recursion at first to have it iterate through each link that came next but the https change to http so we had to use 9 different URLs
 get_person(PEOPLE_URL) 
 get_person(PEOPLE2_URL)
 get_person(PEOPLE3_URL)
@@ -63,3 +66,34 @@ get_person(PEOPLE7_URL)
 get_person(PEOPLE8_URL)
 get_person(PEOPLE9_URL)
 
+def get_film(film_url)
+    uri = URI.parse(film_url)
+    response = Net::HTTP.get_response(uri)
+    ruby_hash = JSON.parse(response.body)
+    ruby_hash["results"].each do |movie|
+# removed the idea of having every planet and character associated with each movie. Now the films will be empty and it is the users job to place them in the movie
+#        chars = movie["characters"].map do |character|
+#             Person.find_by(url_people: character)
+#         end
+#         byebug
+        
+        # uri_char = URI.parse(url_people)
+        # char_response = Net::HTTP.get_response(uri_char)
+        # char_ruby_hash = JSON.parse(char_response.body)
+        # char_ruby_hash["characters"].each do |character|
+
+        #     uri_world = URI.parse(url_planet)
+        #     world_response = Net::HTTP.get_response(uri_world)
+        #     world_ruby_hash = JSON.parse(world_response.body)
+        #     world_ruby_hash["planets"].each do |world|
+
+        Episode.create(title: movie["title"])  #, characters: movie["characters"] , worlds: movie["planets"])
+         
+    end
+end
+
+get_film(FILM_URL)
+
+10.times do 
+    Ppepisode.create(episode_id: Episode.all.sample.id, person_id: Person.all.sample.id, planet_id: Planet.all.sample.id)
+end
