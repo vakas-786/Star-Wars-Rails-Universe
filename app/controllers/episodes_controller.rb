@@ -5,7 +5,7 @@ class EpisodesController < ApplicationController
         @episodes = Episode.all 
     end 
 
-    def show 
+    def show
     end 
 
     private 

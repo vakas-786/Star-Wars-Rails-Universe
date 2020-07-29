@@ -5,3 +5,11 @@
     <li>Terrain: <%= @planet.terrain %></li>
     <li>Diameter: <%= @planet.diameter %></li>
     </ul>
+<br>
+    <ul> 
+<% @planet.people.map do |person| %>
+    <li><%= person.name %></li>
+    <% end %>
+    </ul>
+    
+    <br>

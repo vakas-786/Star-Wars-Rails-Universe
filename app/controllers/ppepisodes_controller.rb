@@ -11,7 +11,7 @@ class PpepisodesController < ApplicationController
     def create 
         @ppepisode = Ppepisode.create(ppepisode_params)
         if @ppepisode.valid? 
-            redirect_to ppepisode_path
+            redirect_to episodes_path
         else 
             flash[:my_errors] = @ppepisode.errors.full_messages
             redirect_to new_ppepisode_path    
