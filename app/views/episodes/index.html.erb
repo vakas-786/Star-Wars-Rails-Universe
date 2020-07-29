@@ -1,0 +1,7 @@
+<h1>Episodes</h1>
+
+<% @episodes.each do |episode|%>
+<ul>
+    <li><%=link_to episode.title, episode_path(episode.id) %></li>
+    </ul>
+<%end%>

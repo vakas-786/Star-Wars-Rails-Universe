@@ -1,5 +1,5 @@
 class PpepisodesController < ApplicationController
-    before_action :set_ppepisode, only: [:update, :destroy]
+    before_action :set_ppepisode, only: [:update, :destroy, :edit]
     
     def new 
         @ppepisode = Ppepisode.new 
@@ -16,6 +16,12 @@ class PpepisodesController < ApplicationController
             flash[:my_errors] = @ppepisode.errors.full_messages
             redirect_to new_ppepisode_path    
         end 
+    end 
+
+    def edit 
+        @planets = Planet.all 
+        @people = Person.all 
+        @episodes = Episode.all 
     end 
 
     def update 
