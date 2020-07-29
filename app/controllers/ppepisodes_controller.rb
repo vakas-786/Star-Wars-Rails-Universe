@@ -33,8 +33,8 @@ class PpepisodesController < ApplicationController
         end 
     end 
 
-    def destroy 
-        @ppepisode.destroy 
+
+    def show 
     end 
 
     private 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :ppepisodes, except: [:index, :show] 
+  resources :ppepisodes, except: [:index] 
   resources :people, only: [:show, :index]
   resources :episodes, only: [:show, :index]
   resources :planets, only: [:show, :index]

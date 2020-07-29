@@ -87,7 +87,7 @@ def get_film(film_url)
         #     world_ruby_hash = JSON.parse(world_response.body)
         #     world_ruby_hash["planets"].each do |world|
 
-        Episode.create(title: movie["title"])  #, characters: movie["characters"] , worlds: movie["planets"])
+        Episode.create(title: movie["title"], opening_crawl: movie["opening_crawl"])  #, characters: movie["characters"] , worlds: movie["planets"])
          
     end
 end
