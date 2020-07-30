@@ -15,5 +15,9 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 body {
-background-image: url(stars.jpg);
-}
+    background: url('https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-25.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
