@@ -1,19 +1,13 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
+
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+@font-face {
+    font-family: "Star Jedi Hollow";
+    src: url(/assets/Starjhol.ttf) format("truetype");
+  }
+
 body {
     background: url('https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-25.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -24,4 +18,34 @@ body {
 
 body {
     color:yellow; 
+  }
+
+  .index-container {
+    display: flex;
+    flex-flow: row wrap;
+
+    background-color: rgba(255, 255, 255, 0.3);
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .index-tile {
+    margin: 10px;
+  }
+
+  .index-img {
+      max-width: 400px;
+  }
+
+  .navbar-brand {
+      color: #ffe81f;
+  }
+
+  .nav-link {
+      color:#ffe81f;
+  }
+
+  .logo {
+      font-family: "Star Jedi Hollow";
+      font-size: 70px;
   }

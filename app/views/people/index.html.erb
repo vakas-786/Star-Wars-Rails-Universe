@@ -1,7 +1,12 @@
-<h1>People</h1>
+<div class="people-container"> 
+    <% @people.each do |person|%>
+    <div class="person-tile">
+        <a href="/people/<%= person.id %>">
+        <img class="person-img" src="<%= person.person_image_url %>" alt="">
+        </a>
+        </div>
+        <% end %>
+        </div>
 
-<% @people.each do |person|%>
-<ul>
-    <li><%=link_to person.name, person_path(person.id) %></li>
-    </ul>
-<%end%>
+
+

@@ -2,9 +2,18 @@
 <br>
 <h2><%= @episode.opening_crawl %></h2>
 
+
 <ul> 
 <% @episode.planets.map do |planet| %>
-    <li><%= planet.name %></li>
+    <li><%=link_to planet.name, planet_path(planet.id) %></li>
     <% end %>
     </ul>
+<ul> 
+<% @episode.people.map do |person| %>
+    <li><%=link_to person.name, person_path(person.id) %></li>
+    <% end %>
+    </ul>
+
+    <%= link_to 'Modify', edit_ppepisode_path %> 
+
 

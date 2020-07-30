@@ -11,7 +11,7 @@ class PpepisodesController < ApplicationController
     def create 
         @ppepisode = Ppepisode.create(ppepisode_params)
         if @ppepisode.valid? 
-            redirect_to episodes_path
+            redirect_to episode_path(@ppepisode.episode.id)
         else 
             flash[:my_errors] = @ppepisode.errors.full_messages
             redirect_to new_ppepisode_path    
@@ -26,7 +26,7 @@ class PpepisodesController < ApplicationController
 
     def update 
         if @ppepisode.update(ppepisode_params)
-            redirect_to ppepisode_path(@planet)
+            redirect_to episode_path(@ppepisode.episode.id)
         else 
             flash[:my_errors] = @ppepisode.errors.full_messages
             redirect_to edit_ppepisode_path 
