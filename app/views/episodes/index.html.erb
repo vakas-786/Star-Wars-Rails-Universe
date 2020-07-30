@@ -1,9 +1,69 @@
-<h1>Episodes</h1>
-
+<div class="container">    
 <% @episodes.each do |episode|%>
-<ul>
-    <li><%=link_to episode.title, episode_path(episode.id) %></li>
-    </ul>
+    <% episode.title %>
+    <% end %>
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="https://www.coverwhiz.com/uploads/movies/Star-Wars-Episode-I-The-Phantom-Menace.jpg" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="/episodes/16">Episode I</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="https://www.coverwhiz.com/uploads/movies/Star-Wars-Episode-II-Attack-of-the-Clones.jpg" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="episodes/17">Episode II</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="https://www.coverwhiz.com/uploads/movies/Star-Wars-Episode-III-Revenge-of-the-Sith.jpg" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="episodes/18">Episode III</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="https://www.coverwhiz.com/uploads/movies/Star-Wars-Episode-IV-A-New-Hope.jpg" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="episodes/13">Episode IV</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="https://www.coverwhiz.com/uploads/movies/Star-Wars-Episode-V-The-Empire-Strikes-Back.jpg" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="episodes/14">Episode V</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="https://www.coverwhiz.com/uploads/movies/Star-Wars-Episode-VI-Return-of-the-Jedi.jpg" alt=""></a>
+          <div class="card-body">
+          <h4 class="card-title">
+            <a href="episodes/15">Episode VI</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
 
-<%end%>
-
+ 
