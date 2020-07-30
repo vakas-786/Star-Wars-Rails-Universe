@@ -3,7 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
-
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.0.0'
 gem "json", ">= 2.3.0"
 gem 'httparty'
 gem 'rest-client', '~> 2.1'
