@@ -37,6 +37,11 @@ class PpepisodesController < ApplicationController
     def show 
     end 
 
+    # def destroy 
+    #     @ppepisode.destroy 
+    #     redirect_to episode_path(@ppepisode.episode.id)
+    # end 
+
     private 
     def set_ppepisode 
         @ppepisode = Ppepisode.find(params[:id])

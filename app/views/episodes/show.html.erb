@@ -1,18 +1,48 @@
-<h1>Star Wars: <%= @episode.title %></h1>
+<center><h1>Star Wars: <%= @episode.title %></h1></center>
 <br>
-<h2><%= @episode.opening_crawl %></h2>
+<center><h2><%= @episode.opening_crawl %></h2></center>
 
+<br>
 
-<ul> 
-<% @episode.planets.map do |planet| %>
-    <li><%=link_to planet.name, planet_path(planet.id) %></li>
-    <% end %>
-    </ul>
-<ul> 
+<center><h2> Character </h2></center>
+
+<center><table></center>
+    <thead>
+    <tr>
+        <th>Names</th>
+        <th colspan="1"></th>
+    </tr>
+</thead>
+
+<tbody>
 <% @episode.people.map do |person| %>
-    <li><%=link_to person.name, person_path(person.id) %></li>
-    <% end %>
-    </ul>
+<tr>
+    <td><%=link_to person.name, person_path(person.id), {:style=>'color:#ffe81f;', :class => "css_class"} %></td>
+</tr>
+<% end %>
+  </tbody>
+</table>
+    
+    <br>
+    <h2>Planet</h2>
+
+    <table>
+    <thead>
+    <tr>
+        <th>Names</th>
+        <th colspan="1"></th>
+    </tr>
+</thead>
+
+<tbody>
+<% @episode.planets.map do |planet| %>
+<tr>
+    <td><%=link_to planet.name, planet_path(planet.id), {:style=>'color:#ffe81f;', :class => "css_class"} %></td>
+</tr>
+<% end %>
+  </tbody>
+</table>
+    
 
     <%= link_to 'Modify', edit_ppepisode_path %> 
 
